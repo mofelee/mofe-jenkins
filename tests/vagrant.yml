@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: yes
+  vars:
+    docker_group_members:
+      - "{{ ansible_ssh_user }}"
+  roles:
+    - role: docker.ubuntu
+      kernel_update_and_reboot_permitted: yes
+
+  tasks:
+    - name: Run jenkins
+      docker_service:
+        project_name: jenkins
+        project_src: /vagrant
+      register: output
+
+    - debug:
+        var: output

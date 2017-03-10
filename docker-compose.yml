@@ -1,0 +1,7 @@
+---
+version: '2'
+services:
+  jenkins:
+    image: registry.cn-hangzhou.aliyuncs.com/mofe/jenkins
+    ports:
+      - "8080:8080"
