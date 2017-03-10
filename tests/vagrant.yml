@@ -13,7 +13,3 @@
       docker_service:
         project_name: jenkins
         project_src: /vagrant
-      register: output
-
-    - debug:
-        var: output
